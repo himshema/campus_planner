@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <title>Student Finance Tracker</title>
+</head>
+<body>
+
+
+
+    <header>
+        
+        <a href="#main-content" class="skip" >Skip to main content</a>
+        <h1>Student Finance Tracker</h1>
+        <p>Manage your money. Understand your spending.</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#records">Records</a>
+        <a href="#record-form-section">Add record</a>
+        <a href="#settings">Settings</a>
+        <a href="#about">About</a>
+    </nav>
+    <main id="main-content">
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <div id="dashboard-stats" class="stats-grid">
+                <article id="total-records-card" class="stat-card">
+                    <h3 >Total Records</h3>
+                    <p id="total-records" class="stat-value">0</p>
+                </article>
+
+                <article id="total-spending-card" class="stat-card">
+                    <h3>Total spending</h3>
+                    <p id="total-spending" class="stat-value">RWF 0</p>
+
+                </article>
+
+                <article id="top-category-card" class="stat-card">
+                    <h3>Top Category</h3>
+                    <p id="top-category" class="stat-value">No Records Yet</p>
+                </article>
+            </div>
+
+            <div id="spending-trend" class="trend-grid">
+                <h3>Last 7 Days</h3>
+                <div id="weekly-chart" class="chart-container">
+
+                </div>
+            </div>
+            <div id="spending-cap-status" class="cap-status">
+                <h3>Spending Cap</h3>
+                <p id="cap-amount">RWF 0</p>
+                <p id="cap-message">Set a spending cap in Settings.</p>
+            </div>
+            
+        </section>
+        <section id="records">
+            <h2>Finance records</h2>
+            <div id="record-search-controls" class="search-controls">
+                
+                    <label for="record-search">Search Records</label>
+                    <input type="text" id="record-search">
+
+                    <label for="case-insensitive">Case insensitive search</label>
+                    <input type="checkbox" id="case-insensitive">
+
+                    <div id="search-feedback" class="form-feedback" aria-live="polite">
+                        <p></p>
+                    </div>
+                
+            </div>
+
+            <div id="records-toolbar" class="records-toolbar">
+                <label for="sort-records">Sort records by:</label>
+                <select id="sort-records" class="form-select">
+                    <option value="date-desc">Date: Newest first</option>
+                    <option value="date-asc">Date: Oldest first</option>
+                    <option value="description-asc">Description: A&#x2013;Z</option>
+                    <option value="description-desc">Description: Z&#x2013;A</option>
+                    <option value="amount-asc">Amount: Lowest first</option>
+                    <option value="amount-desc">Amount: Highest first</option>
+                </select>
+
+                <label for="import-file">Choose JSON file</label>
+                <button type="button" id="import-records" class="button button-secondary">Import JSON</button>
+                <input type="file" id="import-file" accept=".json">
+                <button id="export-records" class="button button-primary">Export JSON</button>
+
+            </div>
+            <div id="records-container" class="records-container">
+                <p id="empty-records" class="empty-state">No records yet. Add your first record</p>
+                <table id="records-table" class="records-table">
+                    <caption>Your finance records</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Description</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+
+                <tbody id="records-table-body"></tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <section id="record-form-section">
+            <h2>Add a record</h2>
+            <div>
+                <form id="record-form" class="record-form">
+                    <label for="record-description">Description</label>
+                    <input id="record-description" class="form-input" type="text" required>
+
+                    <label for="record-amount">Amount</label>
+                    <input id="record-amount" class="form-input" type="number"  min="0" step="any" required>
+
+                    <label for="record-category">Category</label>
+                    <select id="record-category" class="form-select" required>
+                        <option value="" disabled selected>Choose a category</option>
+                        <option value="food">Food</option>
+                        <option value="books">Books</option>
+                        <option value="transport">Transport</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="fees">Fees</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="record-date">Date</label>
+                    <input id="record-date" class="form-input" type="date" required>
+
+                    <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+
+                    <button id="submit-record" class="button button-primary" type="submit">Add Record</button>
+                    <button id="reset-record-form" class="button button-secondary" type="reset">Reset</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="settings">
+            <h2>Settings</h2>
+            <section id="currency-settings" class="settings-card">
+                <h3>Currency Settings</h3>
+                <label  for="base-currency">Base Currency</label>
+                <select id="base-currency">
+                    <option value="" disabled selected>Choose the base currency</option>
+                    <option value="RWF">RWF</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+
+                </select>
+
+                <h4>Manual Exchange Rates</h4>
+
+                <label for="exchange-rate-1">1 USD = ___ RWF</label>
+                <input id="exchange-rate-1" class="form-input" type="number" min="0.000001">
+
+                <label for="exchange-rate-2">1 EUR = ___ RWF</label>
+                <input id="exchange-rate-2" class="form-input" type="number" min="0.000001">
+                <button id="save-currency-settings" class="button button-primary" type="button">Save Currency Settings</button>
+
+            </section>
+
+
+            <section id="budget-settings" class="settings-card">
+                <h3>Spending cap</h3>
+                <label for="spending-limit">Spending limit</label>
+                <input id="spending-limit" class="form-input" type="number" min="0">
+
+                <button id="save-spending-cap" class="button button-primary" type="button">Save Spending Cap</button>
+
+
+            </section>
+
+            <section id="category-settings" class="settings-card">
+                <h3>Manage Categories</h3>
+                <label for="new-category">New Category</label>
+                <input id="new-category" class="form-input" type="text">
+
+                <button id="add-category" class="button button-primary" type="button">Add Category</button>
+
+                <ul id="category-list">
+
+                </ul>
+            </section>
+        </section>
+
+        <section id="about">
+            <h2>About this project</h2>
+            <p>This app helps students track their finances.</p>
+            <a id="github-profile" href="https://github.com/jlouange">Github Profile</a>
+            <a id="email" href="mailto:jlouange@gmail.com">Contact by E-mail</a>
+        </section>
+    </main>
+
+    <footer>&copy;Copyright 2026 Jean Louange MUSHUMBA</footer>
+</body>
+</html>
