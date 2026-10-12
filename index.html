@@ -3,20 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Campus Life Planner</title>
+    <title>campusPlanner - Plan your Campus Life</title>
   </head>
   <body>
     <header>
       <nav class="navbar">
+        <p class="logo">CampusPlanner</p>
         <ul class="menu">
-          <li>Dashboard</li>
-          <li>MyPlanner</li>
-          <li>About</li>
-          <li>Settings</li>
+          <li><a href="#" class="active">Dashboard</a></li>
+          <li><a href="assets/myPlanner.html">MyPlanner</a></li>
+          <li><a href="assets/about.html">About</a></li>
+          <li><a href="assets/settings.html">Settings</a></li>
         </ul>
       </nav>
-      <hr />
     </header>
+    <hr />
     <main>
       <section>
         <div class="hero">
@@ -26,13 +27,45 @@
           </div>
           <button>+Schedule</button>
         </div>
-        <div class="hero-cards">
+        <div class="card-section">
+          <div class="hero-cards">
             <div class="card">
-                <h3>Upcoming</h3>
-                <p>0</p>
+              <h3>Upcoming</h3>
+              <p>0</p>
             </div>
+            <div class="card">
+              <h3>Completed</h3>
+              <p>0</p>
+            </div>
+            <div class="card">
+              <h3>Total Schedules</h3>
+              <p>0</p>
+            </div>
+          </div>
+          <div class="upcoming">
+            <div class="title">
+              <h2>Upcoming Schedules</h2>
+              <p>sort</p>
+            </div>
+            <div class="activity">
+              <div class="activity-description">
+                <h3>Planned activity</h3>
+                <p>Tag</p>
+              </div>
+              <p>Due date</p>
+            </div>
+            <button>View all Schedules -></button>
+          </div>
+        </div>
+        <div class="history-section">
+          <h2>Last 7 days Schedule structure</h2>
+          <p>No plan yet</p>
         </div>
       </section>
     </main>
+    <hr />
+    <footer>
+      <center>©2026 - SHEMA Alain Bruno</center>
+    </footer>
   </body>
 </html>
