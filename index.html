@@ -14,10 +14,12 @@
           <button class="menu-button">Menu</button>
         </p>
         <ul class="menu">
-          <li><a href="#" class="active">Dashboard</a></li>
-          <li><a href="assets/myPlanner.html">MyPlanner</a></li>
-          <li><a href="assets/about.html">About</a></li>
-          <li><a href="assets/settings.html">Settings</a></li>
+          <li><a href="#" class="active nav-link">Dashboard</a></li>
+          <li>
+            <a href="assets/myPlanner.html" class="nav-link">MyPlanner</a>
+          </li>
+          <li><a href="assets/about.html" class="nav-link">About</a></li>
+          <li><a href="assets/settings.html" class="nav-link">Settings</a></li>
         </ul>
       </nav>
     </header>
@@ -25,31 +27,35 @@
       <section>
         <div class="hero">
           <div class="welcome">
-            <h2>Hello Again!</h2>
+            <h2>Welcome Again!</h2>
             <p>Here is your campus life plan so far!</p>
           </div>
-          <button>+Schedule</button>
+          <button><a href="#">+Schedule</a></button>
         </div>
         <div class="card-section">
           <div class="hero-cards">
             <div class="card">
-              <h3>Upcoming</h3>
-              <p>0</p>
+              <h3 style="color: rgb(223, 223, 3)">Upcoming</h3>
+              <p style="color: rgb(223, 223, 3)">0</p>
             </div>
             <div class="card">
-              <h3>Completed</h3>
-              <p>0</p>
+              <h3 style="color: green">Completed</h3>
+              <p style="color: green">0</p>
             </div>
             <div class="card">
-              <h3>Total Schedules</h3>
+              <h3 style="color: blue">Total Schedules</h3>
+              <p style="color: blue">0</p>
+            </div>
+            <div class="card">
+              <h3 style="color: blue">Undated schedules</h3>
               <p>0</p>
             </div>
           </div>
           <div class="upcoming">
             <div class="title">
               <h2>Upcoming Schedules</h2>
-              <p>sort</p>
             </div>
+            <hr />
             <div class="activity">
               <div class="activity-description">
                 <h3>Planned activity</h3>
@@ -57,6 +63,7 @@
               </div>
               <p>Due date</p>
             </div>
+            <hr />
             <button>View all Schedules -></button>
           </div>
         </div>

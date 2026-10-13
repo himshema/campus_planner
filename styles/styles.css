@@ -13,14 +13,14 @@ a:focus-visible {
 }
 .sidebar {
   max-width: 240px;
-  padding: 18px;
+  padding-left: 20px;
+  padding-right: 20px;
   background: #ffffff;
   border-right: 1px solid #e6eaf0;
 }
 .navbar {
   top: 0;
   position: sticky;
-  padding-top: 2rem;
 }
 .active {
   background: #edf0ff;
@@ -29,7 +29,7 @@ a:focus-visible {
   width: 100%;
   border-radius: 12px;
 }
-.manu,a:hover {
+.nav-link:hover {
   background: #edf0ff;
   width: 100%;
   border-radius: 12px;
@@ -49,18 +49,125 @@ button {
   border: 0.5px solid;
   border-radius: 0.4rem;
 }
+.logo {
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
 .menu-button {
   display: none;
   padding: 0.25rem;
+  margin-left: auto;
 }
 main {
   padding: 24px 18px;
   min-width: 0;
-  width: 100%;
+}
+.welcome h2 {
+  font-weight: 900;
+  font-size: 35px;
+}
+.welcome p {
+  padding-left: 1rem;
+  color: #047b75;
+}
+.hero button {
+  padding: 6px;
+  height: 40px;
+  color: #ffffff;
+  background-color: #5267d9;
+}
+.card-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  padding: 2rem;
+  margin: 2rem;
+}
+.hero-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: #edf0ff;
+  text-align: center;
+}
+.card:hover {
+  box-shadow: 1px 4px 8px 2px #c0c0c0;
+}
+.card p {
+  font-weight: 600;
+}
+.upcoming {
+  box-shadow: 1px 4px 8px 2px #c0c0c0;
+  padding: 2rem;
+  border-radius: 12px;
+}
+.activity-description h3 {
+  color: #5267d9;
+}
+.activity-description p {
+  color: #047b75;
+}
+.upcoming button {
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  margin-left: auto;
+  color: #047b75;
+  cursor: pointer;
+}
+.history-section {
+  border: 1px solid #c0c0c0;
+  padding: 2rem;
+  text-align: center;
+  margin: 5rem;
 }
 @media (min-width: 760px) {
   body {
     display: flex;
+  }
+  .hero {
+    display: flex;
+  }
+  main {
+    width: 100%;
+  }
+  .hero button {
+    margin-left: auto;
+  }
+  .card-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+  .activity {
+    display: flex;
+  }
+  .activity p {
+    margin-left: auto;
+  }
+  .upcoming button {
+    margin-left: auto;
+  }
+  #myPlanner-card {
+    display: flex;
+    width: 90%;
+  }
+}
+@media (min-width: 920px) {
+  .activity {
+    gap: 4rem;
+  }
+}
+@media (max-width: 919px) {
+  .activity {
+    gap: 1rem;
   }
 }
 @media (max-width: 760px) {
@@ -73,4 +180,93 @@ main {
   .menu-button {
     display: block;
   }
+}
+@media (max-width: 324px) {
+  .upcoming {
+    padding: 1rem;
+    min-width: 90px;
+  }
+  .schedules {
+    min-width: 90px;
+  }
+}
+
+.schedules {
+  box-shadow: 1px 2px 3px 4px #c0c0c0;
+  margin: 2rem;
+  padding: 2rem;
+}
+.search {
+  align-items: center;
+  width: 90%;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #c0c0c0;
+  padding-left: 2rem;
+}
+.sort {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px;
+}
+.sort button,
+select {
+  text-align: center;
+  height: 3rem;
+  width: 10rem;
+  padding: 15px;
+}
+#myPlanner {
+  margin: 1rem;
+  width: 100%;
+  text-align: left;
+}
+.action {
+  padding-top: 1rem;
+}
+
+.about {
+  text-align: center;
+  letter-spacing: 1px;
+}
+.about h2 {
+  text-align: left;
+  font-size: 30px;
+  color: #047b75;
+}
+.about p {
+  padding-left: 1rem;
+}
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  padding: 2rem;
+}
+.features-card {
+  border: 0;
+  background: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about h3 {
+  font-size: 25px;
+  margin-top: 3rem;
+}
+.features-card h3 {
+  color: #047b75;
+}
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rem;
+}
+.contacts p{
+    font-weight: 600;
+    color: #047b75;
+}
+.contacts p a{
+    color: #5267d9;
 }
