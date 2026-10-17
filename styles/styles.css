@@ -190,6 +190,61 @@ main {
     min-width: 90px;
   }
 }
+.history-chart{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.history-row{
+  display: grid;
+  grid-template-columns: 100px minmax(o, 1fr) 24px;
+  gap:12px;
+  align-items: center;
+  width: 100%;
+}
+.history-day{
+  font-size: 0.875rem;
+  color: #555
+}
+.history-track{
+  width: 100%;
+  min-width: 0;
+  height: 14px;
+  overflow: hidden;
+  background: #e9edf3;
+  border-radius: 999px;
+  text-align: left;
+}
+
+
+.history-bar{
+  height: 100%;
+  background: #4169e1;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+.history-count{
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+@media (max-width: 9200px){
+  .history-row{
+    grid-template-columns: 100px minmax(0, 1fr) 32px;
+    gap: 8px;
+  }
+  .history-day,
+  .history-count{
+    font-size: 0.75rem;
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .history-bar{
+    transition: none;
+  }
+}
 
 .schedules {
   box-shadow: 1px 2px 3px 4px #c0c0c0;
@@ -206,8 +261,7 @@ main {
 }
 .sort {
   margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
+
   gap: 34px;
 }
 .sort button,
@@ -217,6 +271,7 @@ select {
   width: 10rem;
   padding: 15px;
 }
+
 #myPlanner {
   margin: 1rem;
   width: 100%;
@@ -263,10 +318,144 @@ select {
   flex-wrap: wrap;
   gap: 10rem;
 }
-.contacts p{
-    font-weight: 600;
-    color: #047b75;
+.contacts p {
+  font-weight: 600;
+  color: #047b75;
 }
-.contacts p a{
-    color: #5267d9;
+.contacts p a {
+  color: #5267d9;
+}
+
+form input {
+  height: 1.5rem;
+}
+form span {
+  color: #7b0404;
+}
+.optional {
+  color: #707070;
+}
+.duration {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+:focus-visible {
+  outline: 2px solid #01302d;
+}
+
+.duration input {
+  height: 2.5rem;
+  border-radius: 10px;
+  border: 1px solid;
+  padding-left: 1rem;
+}
+.duration select {
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+}
+
+.buttons button {
+  gap: 5rem;
+  border: 1px solid #c0c0c0;
+  padding: 1rem;
+  width: 40%;
+}
+.cancel {
+  color: #ffffff;
+  background-color: #7b0404;
+}
+
+.save {
+  color: #fff;
+  background-color: #047b75;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  padding: 0.75rem 1rem;
+  background-color: #fff;
+  color: #047b75;
+  border: 2px solid #047b75;
+  border-radius: 0.25rem;
+  transform: translateY(-150%);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+#main:focus {
+  outline: 1px solid #047b75;
+}
+.sort label {
+  padding-top: 0.75rem;
+}
+
+.sort-selector {
+  margin-bottom: 1rem;
+  width: 60%;
+  border-radius: 15px;
+}
+
+.completed {
+  opacity: 0.65;
+}
+.tag-color {
+  color: #707070;
+}
+.schedule-link {
+  margin-left: auto;
+}
+.dn{
+  display: none;
+}
+
+#myPlanner-sms{
+  color: #7b0404;
+}
+
+ul{
+  list-style: none;
+}
+
+.settings-section{
+  width: min(100% - 32px, 900px);
+  margin: 32px auto;
+}
+.settings-section h1{
+  color: #047b75;
+}
+.settings-card{
+  padding: 24px;
+  margin: 20px 0;
+  border: 1px solid #5c6575;
+  border-radius: 12px;
+  background: #fff;
+}
+.settings-card h2{
+  margin-top: 0;
+}
+.settings-card button{
+  display: block;
+  margin-top: 16px;
+}
+
+#settings-status {
+  min-height: 1.5rem;
+}
+@media (max-width: 480px){
+  .settings-card{
+    padding: 16px;
+  }
+  .settings-card input[type="file"]{
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+.settings-section button{
+  padding: 0.7rem;
 }

@@ -13,10 +13,10 @@
           CampusPlanner <button class="menu-button">Menu</button>
         </p>
         <ul class="menu">
-          <li><a href="../index.html">Dashboard</a></li>
-          <li><a href="#" class="active">MyPlanner</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="settings.html">Settings</a></li>
+          <li><a href="../index.html" class="nav-link">Dashboard</a></li>
+          <li><a href="#" class="active nav-link">MyPlanner</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="settings.html" class="nav-link">Settings</a></li>
         </ul>
       </nav>
     </header>
@@ -26,28 +26,35 @@
           <h2>MyPlanner</h2>
           <p>Manage your schedules, tasks, and other campus activities!</p>
         </div>
-        <button><a href="#">+Schedule</a></button>
+        <a href="addRecord.html" class="schedule-link"><button>+Schedule</button></a>
       </div>
       <div class="schedules">
         <input
-          type="text"
+          type="search"
+          id="search"
           class="search"
           placeholder="Search by activity, tag, date, ..."
+          arial-label="Search schedules"
         />
         <div class="sort">
-          <p>Sort by:</p>
-          <button>All</button>
-          <button>A-Z</button>
-          <button>Date</button>
-          <select name="" id="">
-            <option value="" class="invalid">Completion status</option>
-            <option value="">Not yet completed</option>
-            <option value="">Completed</option>
+          <label for="myPlanner-sort">Sort by: </label>
+          <select class="sort-selector" name="" id="myPlanner_sort">
+            <option value="all">All</option>
+            <option value="title">A-Z</option>
+            <option value="date">Due Date</option>
+            <option value="duration">Duration</option>
+          </select><br>
+          <label for="completion_filter">Complettion Status: </label>
+          <select class="sort-selector" name="" id="completion_filter">
+            <option value="all">All schedules</option>
+            <option value="pending">Not completed</option>
+            <option value="completed">Completed</option>
           </select>
         </div>
         <div class="" id="myPlanner-card">
           <div class="upcoming" id="myPlanner">
-            <div class="activity">
+            
+            <!--<div class="activity">
               <input type="checkbox" name="" id="" />
               <div class="activity-description">
                 <h3>Planned activity</h3>
@@ -59,14 +66,16 @@
                 <button>Edit</button>
                 <button>Delete</button>
               </div>
-            </div>
+            </div>-->
           </div>
-        </div>
+          <p id="myPlanner-sms" role="status" aria-live="polite"></p>
+         </div>
       </div>
       <hr />
       <footer>
         <center>©2026 - SHEMA Alain Bruno</center>
       </footer>
     </main>
+    <script type="module" src="../scripts/search.js"></script>
   </body>
 </html>

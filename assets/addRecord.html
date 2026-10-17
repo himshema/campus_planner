@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a new schedule!</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to the main content</a>
+    <header class="sidebar">
+      <nav class="navbar">
+        <p class="logo">
+          CampusPlanner
+          <button class="menu-button">Menu</button>
+        </p>
+        <ul class="menu">
+          <li><a href="../index.html" class="nav-link">Dashboard</a></li>
+          <li>
+            <a href="myPlanner.html" class="active nav-link">MyPlanner</a>
+          </li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="settings.html" class="nav-link">Settings</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="hero">
+        <div class="welcome">
+          <h2 id = "heading">Add a schedule.</h2>
+        </div>
+      </div>
+      <div class="schedules" id="main" tabindex="-1">
+        <form id="schedule">
+          <label for="title" class="input">
+            <p>Title <span>*</span></p>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              class="search"
+              placeholder="e.g: Study Front-end Web development"
+              required
+          /></label>
+          <label for="dueDate" class="input"
+            ><p>Due Date</p>
+            <input
+              type="date"
+              class="search"
+              id="dueDate"
+              name="dueDate"
+              
+          /></label>
+          <label for="duration" class="input">
+            <p>Duration <span>*</span></p>
+            <div class="duration">
+              <input
+                type="number"
+                id="duration"
+                name="duration"
+                min="0.01"
+                step="any"
+                class=""
+                placeholder="e.g: 2"
+                required
+              />
+              <select name="durationTime" id="durationTime">
+                <option value="hours" selected>hour</option>
+                <option value="minutes">Minutes</option>
+              </select>
+            </div>
+          </label>
+
+          <label for="tag" class="input">
+            <p>Tag <span>*</span></p>
+            
+            <input
+              type="text"
+              id="tag"
+              name="tag"
+              placeholder="e.g: assignment"
+              class="search"
+              required
+            />
+          </label>
+          <label for="description" class="input">
+            <p>description <span class="optional">(optional)</span></p>
+            <textarea
+              name="description"
+              id="description"
+              name="description"
+              class="search"
+            ></textarea>
+          </label>
+          <div class="buttons">
+            <button class="cancel"><a href="myPlanner.html">Cancel</a></button>
+            <button class="save" type="submit">Save</button>
+          </div>
+        </form>
+        <p id="sms" role="status" aria-live="polite"></p>
+      </div>
+      <hr />
+      <footer>
+        <center>©2026 - SHEMA Alain Bruno</center>
+      </footer>
+
+    </main>
+    <script type="module" src="../scripts/main.js"></script>
+    <script type="module" src="../scripts/addRecord.js"></script>
+  </body>
+</html>
