@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>campusPlanner - Plan your Campus Life</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link"> Skip to the main content </a>
+    <header class="sidebar">
+      <nav class="navbar">
+        <p class="logo">
+          CampusPlanner
+          <!-- semantic update -->
+          <button type="button" class="menu-button" id = "menu-button" aria-controls="main-menu" aria-expanded="false">Menu</button>
+        </p>
+        <ul class="menu dnone" id="main-menu">
+          <li><a href="#" class="active nav-link">Dashboard</a></li>
+          <li>
+            <a href="assets/myPlanner.html" class="nav-link">MyPlanner</a>
+          </li>
+          <li><a href="assets/about.html" class="nav-link">About</a></li>
+          <li><a href="assets/settings.html" class="nav-link">Settings</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <section>
+        <div class="hero">
+          <div class="welcome">
+            <!-- h1 -->
+            <h1>Welcome Again!</h1>
+            <p>Here is your campus life plan so far!</p>
+          </div>
+          <!--  link-->
+          <a href="assets/addRecord.html" class="schedule-link">+Schedule</a>
+        </div>
+        <div class="card-section">
+          <div class="hero-cards">
+            <div class="card">
+              <h3 style="color: rgb(223, 223, 3)">Upcoming</h3>
+              <p id = "upcoming-count" style="color: rgb(223, 223, 3)">0</p>
+            </div>
+            <div class="card">
+              <h3 style="color: green">Completed</h3>
+              <p id = "completed-count" style="color: green">0</p>
+            </div>
+            <div class="card">
+              <h3 style="color: blue">Total Schedules</h3>
+              <p id = "total-count" style="color: blue">0</p>
+            </div>
+            <div class="card">
+              <h3 style="color: blue">Undated schedules</h3>
+              <p id = "undated-count">0</p>
+            </div>
+            <div class="card">
+              <h3>Most-used Tag</h3>
+              <p id = "most-used-tag"></p>
+            </div>
+          </div>
+          <div class="upcoming">
+            <div class="title">
+              <h2>Upcoming Schedules</h2>
+            </div>
+            <hr />
+            <div class="activity">
+              <div id="dashboard-upcoming" aria-live="polite">
+
+                <p>No upcoming schedules yet.</p>
+              </div>
+              
+            </div>
+            <hr />
+            <a href="assets/myPlanner.html" class="view button-link">View all Schedules =></a>
+          </div>
+        </div>
+        
+        <div class="history-section" id="weekly-history">
+          <h2>Last 7 days Schedule structure</h2>
+          <p aria-live="polite">No plan yet</p>
+        </div>
+      </section>
+      <hr />
+      <footer>
+        <center>©2026 - SHEMA Alain Bruno</center>
+      </footer>
+    </main>
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/ui.js"></script>
+    <script type="module" src="scripts/colorTheme.js"></script>
+    <script type="module" src="scripts/colorTheme.js"></script>
+    
+  </body>
+</html>
