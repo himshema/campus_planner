@@ -104,6 +104,7 @@ function renderPlans() {
     planner.classList.toggle("dn", plans.length === 0);
     return;
   }
+  planner.classList.remove("dn")
   //sms.textContent = `${plans.length} schedule ${plans.length === 1 ? "" : "s"} found.`;
   console.log(plans)
   for (const plan of plans) {

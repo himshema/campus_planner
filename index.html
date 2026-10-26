@@ -12,9 +12,10 @@
       <nav class="navbar">
         <p class="logo">
           CampusPlanner
-          <button class="menu-button">Menu</button>
+          <!-- semantic update -->
+          <button type="button" class="menu-button" id = "menu-button" aria-controls="main-menu" aria-expanded="false">Menu</button>
         </p>
-        <ul class="menu">
+        <ul class="menu dnone" id="main-menu">
           <li><a href="#" class="active nav-link">Dashboard</a></li>
           <li>
             <a href="assets/myPlanner.html" class="nav-link">MyPlanner</a>
@@ -28,10 +29,12 @@
       <section>
         <div class="hero">
           <div class="welcome">
-            <h2>Welcome Again!</h2>
+            <!-- h1 -->
+            <h1>Welcome Again!</h1>
             <p>Here is your campus life plan so far!</p>
           </div>
-          <a href="assets/addRecord.html" class="schedule-link"><button>+Schedule</button></a>
+          <!--  link-->
+          <a href="assets/addRecord.html" class="schedule-link">+Schedule</a>
         </div>
         <div class="card-section">
           <div class="hero-cards">
@@ -62,18 +65,20 @@
             </div>
             <hr />
             <div class="activity">
-              <div id="dashboard-upcoming">
+              <div id="dashboard-upcoming" aria-live="polite">
+
                 <p>No upcoming schedules yet.</p>
               </div>
               
             </div>
             <hr />
-            <a href="assets/myPlanner.html"><button>View all Schedules -></button></a>
+            <a href="assets/myPlanner.html" class="view button-link">View all Schedules =></a>
           </div>
         </div>
+        
         <div class="history-section" id="weekly-history">
           <h2>Last 7 days Schedule structure</h2>
-          <p>No plan yet</p>
+          <p aria-live="polite">No plan yet</p>
         </div>
       </section>
       <hr />
@@ -83,5 +88,8 @@
     </main>
     <script type="module" src="scripts/main.js"></script>
     <script type="module" src="scripts/ui.js"></script>
+    <script type="module" src="scripts/colorTheme.js"></script>
+    <script type="module" src="scripts/colorTheme.js"></script>
+    
   </body>
 </html>

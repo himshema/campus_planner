@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="../styles/styles.css" />
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to the Main Content</a>
     <header class="sidebar">
       <nav class="navbar">
         <p class="logo">
           CampusPlanner
-          <button class="menu-button">Menu</button>
+          <button class="menu-button" type="button" id="menu-button" aria-controls="main-menu" aria-expanded="false">Menu</button>
         </p>
-        <ul class="menu">
+        <ul class="menu" id="main-menu">
           <li><a href="../index.html" class="nav-link">Dashboard</a></li>
           <li><a href="myPlanner.html" class="nav-link">MyPlanner</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
@@ -26,14 +27,14 @@
       <section class="settings-section">
         <h1>Settings</h1>
         <p>Manage your campus planner data and backups!</p>
-        <section class="setting-card" aria-labelledby="export-heading">
+        <section class="settings-card" aria-labelledby="export-heading">
           <h2 id="export-heading">Export Your schedules</h2>
           <p>
             Download your schedules as a json file, allowing you to import it any time later.
           </p>
           <button type="button" id = "export-json">Export schedules</button>
         </section>
-        <section class="setting-card" aria-labelledby="import-heading">
+        <section class="settings-card" aria-labelledby="import-heading">
           <h2 id="import-heading">Import schedules</h2>
           <p>
             Select your .JSON schedules file, and import it rn.
@@ -43,6 +44,16 @@
           <button type="button" id="import-json">Import schedules</button>
           <p id="settings-status" role="status" aria-live="polite"></p>
         </section>
+        <section class="settings-card" aria-labelledby="theme-heading">
+          <h2 id="theme-heading">Theme</h2>
+          <p>Choose how you want campusPlanner to look: </p>
+          <label for="theme-select">Color theme</label>
+          <select name="theme" id="theme-select">
+            <option value="light">Light mode</option>
+            <option value="dark">Dark Mode</option>
+          </select>
+          <p id = "theme-status" role="status" aria-live="polite"></p>
+        </section>
       </section>
       <hr />
       <footer>
@@ -50,5 +61,8 @@
       </footer>
     </main>
     <script type="module" src="../scripts/settings.js"></script>
+    <!--<script type="module" src="../scripts/main.js"></script>-->
+    <script type="module" src="../scripts/colorTheme.js"></script>
+
   </body>
 </html>

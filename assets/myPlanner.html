@@ -10,9 +10,10 @@
     <header class="sidebar">
       <nav class="navbar">
         <p class="logo">
-          CampusPlanner <button class="menu-button">Menu</button>
+          CampusPlanner 
+          <button class="menu-button" id="menu-button" type="button" aria-controls="main-menu" aria-expanded="false">Menu</button>
         </p>
-        <ul class="menu">
+        <ul class="menu" id="main-menu">
           <li><a href="../index.html" class="nav-link">Dashboard</a></li>
           <li><a href="#" class="active nav-link">MyPlanner</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
@@ -26,7 +27,7 @@
           <h2>MyPlanner</h2>
           <p>Manage your schedules, tasks, and other campus activities!</p>
         </div>
-        <a href="addRecord.html" class="schedule-link"><button>+Schedule</button></a>
+        <a href="addRecord.html" class="schedule-link">+Schedule</a>
       </div>
       <div class="schedules">
         <input
@@ -77,5 +78,10 @@
       </footer>
     </main>
     <script type="module" src="../scripts/search.js"></script>
+    <script type="module" src="../scripts/colorTheme.js"></script>
+    <script type="module" src="../scripts/colorTheme.js"></script>
+    <script type="module" src="../scripts/main.js"></script>
+
+
   </body>
 </html>

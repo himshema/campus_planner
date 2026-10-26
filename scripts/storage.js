@@ -34,7 +34,7 @@ export function saveData(records) {
       `Ooops, Could not save invalid data: \n${errors.join("\n")}`,
     );
   }
-
+  
   try {
     const data = JSON.stringify(records);
     localStorage.setItem(STORAGE_KEY, data);

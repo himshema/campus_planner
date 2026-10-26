@@ -1,8 +1,41 @@
+/*  */
+:root{
+  color-scheme: light;
+  --page-bg: #f5f7fa;
+  --surface: #ffffff;
+  --surface-alt: #ededed;
+  --text: #1f2937;
+  --muted-text: #555555;
+  --border-color: #c0c0c0;
+  --accent: #047b75;
+  --accent-soft:#edf0ff;
+  --input-bg: #ffffff;
+  --focus-color: #5267d9;
+  --shadow-color: rgb(0 0 0 /12%);
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --page-bg: #111827;
+  --surface: #1f2937; 
+  --surface-alt: #283449;
+  --text: #f3f4f6; 
+  --muted-text: #c1cad6;
+   --border-color: #4b5563;
+   --accent: #75ddd0;
+  --accent-soft : #263b49; 
+  --input-bg: #17212e;
+   --focus-color: #a5b4fc;
+  --shadow-color: rgb(0 0 0 /35%);
+
+}
+
+
+/*  */
 body {
   margin: 0;
-  background-color: #f5f7fa;
   line-height: 1.5;
 }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -11,6 +44,7 @@ a:focus-visible {
   outline: 3px solid #5267d9;
   outline-offset: 3px;
 }
+
 .sidebar {
   max-width: 240px;
   padding-left: 20px;
@@ -75,7 +109,7 @@ main {
 .hero button {
   padding: 6px;
   height: 40px;
-  color: #ffffff;
+  /* color: #ffffff; */
   background-color: #5267d9;
 }
 .card-section {
@@ -91,11 +125,11 @@ main {
   gap: 20px;
 }
 .card {
-  border: 1px solid #c0c0c0;
+  /* border: 1px solid #c0c0c0; */
   border-radius: 5px;
   padding-left: 1rem;
   padding-right: 1rem;
-  background: #edf0ff;
+  /* background: #edf0ff; */
   text-align: center;
 }
 .card:hover {
@@ -108,7 +142,7 @@ main {
   box-shadow: 1px 4px 8px 2px #c0c0c0;
   padding: 2rem;
   border-radius: 12px;
-}
+} 
 .activity-description h3 {
   color: #5267d9;
 }
@@ -174,7 +208,7 @@ main {
   .sidebar {
     max-width: none;
   }
-  .menu {
+  .dnone {
     display: none;
   }
   .menu-button {
@@ -198,7 +232,7 @@ main {
 }
 .history-row{
   display: grid;
-  grid-template-columns: 100px minmax(o, 1fr) 24px;
+  grid-template-columns: 100px minmax(0, 1fr) 24px;
   gap:12px;
   align-items: center;
   width: 100%;
@@ -383,11 +417,14 @@ form span {
   border-radius: 0.25rem;
   transform: translateY(-150%);
 }
-.skip-link:focus {
+/*  */
+.skip-link:focus-visible{
   transform: translateY(0);
+  outline: 2px solid #013026;
 }
 #main:focus {
-  outline: 1px solid #047b75;
+  outline: 2px solid #047b75;
+  outline-offset: 3px;
 }
 .sort label {
   padding-top: 0.75rem;
@@ -405,9 +442,24 @@ form span {
 .tag-color {
   color: #707070;
 }
+/* linkcss */
+.button-link{
+  padding: 0.3rem;
+  border-radius: 10px;
+}
 .schedule-link {
   margin-left: auto;
+  background-color: #4169e1;
+  color: white;
+  height: 2rem;
+  padding: 0.3rem;
+  border-radius: 10px;
 }
+.view{
+  color: #047b75;
+  margin-left: auto;
+}
+
 .dn{
   display: none;
 }
@@ -426,6 +478,7 @@ ul{
 }
 .settings-section h1{
   color: #047b75;
+  font-size: 50px;
 }
 .settings-card{
   padding: 24px;
@@ -458,4 +511,80 @@ ul{
 
 .settings-section button{
   padding: 0.7rem;
+}
+#export-Heading{
+  color: #4169e1;
+}
+.display{
+  display: block;
+}
+
+/*  */
+.static-upcoming{
+  color: #595900;
+}
+.static-completed{
+  color: #176534;
+}
+.static-total{
+  color: #2446a8;
+}
+
+/*  */
+body {
+  background-color: var(--page-bg);
+  color: var(--text)
+}
+.sidebar,
+.settings-card,
+.upcoming,
+.schedules,
+.history-section{
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--border-color);
+}
+.nav-link:hover,
+.card {
+  background-color: var(--surface-alt);
+  color: var(--accent);
+}
+.welcome p,
+.activity-description p,
+.activity-description h3,
+.about h2,
+.features-card h3,
+.contacts p {
+  color: var(--accent);
+}
+.settings-section h1{
+  color: var(--accent);
+}
+.setting-card {
+  border-color: var(--border-color);
+}
+input, textarea, select {
+  background-color: var(--input-bg);
+  color: var(--text);
+  border-color: var(--border-color);
+
+}
+.optional, .history-day, .tag-color{
+  color: var(--muted-text);
+}
+.upcoming, .card, .schedules {
+  box-shadow: 1px 4px 8px 2px var(--shadow-color);
+
+}
+a:focus-visible, 
+:focus-visible{
+  outline-color: var(--focus-color);
+
+}
+#main:focus {
+  outline-color: var(--focus-color);
+
+}
+#theme-status {
+  min-height: 1.5rem;
 }

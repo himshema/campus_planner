@@ -68,7 +68,6 @@ form.addEventListener("submit", (event) => {
   const rn = new Date().toISOString();
   const plan = existingPlan ? {
     ...existingPlan,
-    id: `plan_${crypto.randomUUID()}`,
     title,
     description,
     dueDate,
@@ -112,3 +111,4 @@ function showMessage(text, isError) {
   sms.textContent = text;
   sms.style.color = isError ? "#7b0404" : "#047b75";
 }
+

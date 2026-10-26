@@ -1,10 +1,10 @@
-const title_pattern = /^\S(?:.*\S)?$/;
-const duration_pattern = /^(0|[1-9]\d*)(\.\d{1,2})?$/;
+const title_pattern = /^(?!.* {2,})\S(?:.*\S)?$/;
+const duration_pattern = /^[1-9]\d*$/;
 const date_pattern = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
 const tag_pattern = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
 
 function dateValidator(value) {
-  if (typeof value !== "string" || !date_pattern.test(value)) {
+  if ( typeof value !== "string" || !date_pattern.test(value)) {
     return false;
   }
   const [year, month, day] = value.split("-").map(Number);
@@ -15,6 +15,7 @@ function dateValidator(value) {
     date.getUTCDate() === day
   );
 }
+
 function DurationValidator(value) {
   return (
     typeof value === "string" &&
@@ -22,7 +23,6 @@ function DurationValidator(value) {
     !Number.isNaN(Date.parse(value))
   );
 }
-
 export function validateData(record) {
   const errors = [];
   if (!record || typeof record !== "object" || Array.isArray(record)) {
@@ -33,10 +33,10 @@ export function validateData(record) {
   }
   if (typeof record.title !== "string" || !title_pattern.test(record.title)) {
     errors.push(
+      alert("Wait! provide valid title, title can not contain trailing space!"),
       "Wait! Please provide valid title, Title can not contain trailing spaces, and collapse doubles!!!",
     );
   }
-
   if (
     typeof record.duration !== "number" ||
     !Number.isSafeInteger(record.duration) ||
@@ -55,7 +55,6 @@ export function validateDatas(records) {
   if (!Array.isArray(records)) {
     return ["Damnn, Data is not well formatted!"];
   }
-
   const errors = [];
   const duplicateIds = new Set();
   records.forEach((record, index) => {

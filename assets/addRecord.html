@@ -12,9 +12,9 @@
       <nav class="navbar">
         <p class="logo">
           CampusPlanner
-          <button class="menu-button">Menu</button>
+          <button class="menu-button" type="button" id="menu-button" aria-controls="main-menu" aria-expanded="false">Menu</button>
         </p>
-        <ul class="menu">
+        <ul class="menu" id="main-menu">
           <li><a href="../index.html" class="nav-link">Dashboard</a></li>
           <li>
             <a href="myPlanner.html" class="active nav-link">MyPlanner</a>
@@ -86,7 +86,6 @@
           <label for="description" class="input">
             <p>description <span class="optional">(optional)</span></p>
             <textarea
-              name="description"
               id="description"
               name="description"
               class="search"
@@ -107,5 +106,6 @@
     </main>
     <script type="module" src="../scripts/main.js"></script>
     <script type="module" src="../scripts/addRecord.js"></script>
+    <script type="module" src="../scripts/colorTheme.js"></script>
   </body>
 </html>

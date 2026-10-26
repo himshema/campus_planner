@@ -47,7 +47,6 @@ export function updatePlan(id, updates) {
   records = updateRecords;
 }
 
-// m6: updates
 export function importPlans(incomingPlans){
   const existingIds = new Set(records.map((record)=> record.id));
   const newPlans = incomingPlans.filter((plan)=> !existingIds.has(plan.id),);

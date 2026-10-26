@@ -17,3 +17,13 @@ function campusPlanner() {
   }
 }
 campusPlanner();
+
+function menu(){
+  const menuButton = document.querySelector("#menu-button");
+  const sidebar = document.querySelector(".menu")
+  menuButton.addEventListener("click",()=>{
+    sidebar.classList.toggle("dnone");
+  })
+  sidebar.classList.add("dnone");
+}
+menu()

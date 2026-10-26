@@ -11,9 +11,9 @@
       <nav class="navbar">
         <p class="logo">
           CampusPlanner
-          <button class="menu-button">Menu</button>
+          <button type="button" class="menu-button" id="menu-button" aria-controls="main-menu" aria-expanded="false">Menu</button>
         </p>
-        <ul class="menu">
+        <ul class="menu" id="main-menu">
           <li><a href="../index.html" class="nav-link">Dashboard</a></li>
           <li><a href="myPlanner.html" class="nav-link">MyPlanner</a></li>
           <li><a href="#" class="active nav-link">About</a></li>
@@ -73,4 +73,7 @@
     </main>
   </body>
   <script type="module" src="../scripts/main.js"></script>
+  <script type="module" src="../scripts/settings.js"></script>
+  <script type = "module" src="../scripts/colorTheme.js"></script>
+
 </html>

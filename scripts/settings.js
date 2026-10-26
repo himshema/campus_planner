@@ -1,3 +1,5 @@
+import { getTheme } from "./colorTheme.js";
+import { setTheme } from "./colorTheme.js";
 import { getData } from "./storage.js";
 import { retrievePlans, getPlans, importPlans } from "./state.js";
 import { validateDatas } from "./validators.js";
@@ -6,6 +8,9 @@ const exportButton = document.querySelector("#export-json");
 const importButton = document.querySelector("#import-json");
 const fileInput = document.querySelector("#import-file");
 const status = document.querySelector("#settings-status");
+const themeSelect = document.querySelector("#theme-select");
+const themeStatus = document.querySelector("#theme-status");
+
 function showStatus(message, isError = false){
     status.textContent = message;
     status.dataset.status = isError ? "error" : "success";
@@ -21,7 +26,7 @@ function initializeSettings(){
         exportButton.disabled = true;
         importButton.disabled = true;
         return false;
-    }
+    };
     return true;
 }
 function exportSchedules(){
@@ -69,6 +74,7 @@ async function importSchedules(){
             showStatus(`import Rejected, Try again ${preview}${remaining > 0 ?`And ${remaining} more error(s).` : ""}`, true,);
             return;
         }
+
         const result = importPlans(importedPlans);
         showStatus(
             `import complete!`
@@ -85,6 +91,14 @@ async function importSchedules(){
         exportButton.disabled = false;
     }
 }
+
+themeSelect.value = getTheme();
+themeSelect.addEventListener("change", () => {
+    const saved = setTheme(themeSelect.value);
+    themeStatus.textContent = saved ? `Theme changed to ${themeSelect.value} mode.` : "theme applied, but couldn't be saved, it may reset when you reload!";
+    themeStatus.dataset.status = saved ? "success" : "error";
+});
+
 if(initializeSettings()){
     exportButton.addEventListener("click", exportSchedules);
     importButton.addEventListener("click", importSchedules);
